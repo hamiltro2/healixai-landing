@@ -25,8 +25,8 @@ export default function FAQ() {
       answer: "HealixAI is designed as an educational and research tool for healthcare professionals. While it provides evidence-based information, clinical decisions should always be made by qualified healthcare providers using their professional judgment."
     },
     {
-      question: "Do you offer refunds?",
-      answer: "We offer a 7-day money-back guarantee if you're not satisfied with our service."
+      question: "Can we use HealixAI on our medical or healthcare website?",
+      answer: "Yes! HealixAI can be integrated into your medical or healthcare website to provide evidence-based information to your visitors. Get in touch with our team to discuss integration options and how we can customize the solution for your specific needs."
     }
   ];
 

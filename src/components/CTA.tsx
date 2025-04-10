@@ -49,9 +49,9 @@ export default function CTA() {
                 Contact us to learn more and start the conversation
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground">
-              No credit card required.
-            </p>
+            <div className="text-sm text-muted-foreground">
+              
+            </div>
           </div>
         </div>
       </div>
