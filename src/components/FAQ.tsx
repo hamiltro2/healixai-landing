@@ -10,7 +10,7 @@ export default function FAQ() {
     },
     {
       question: "What sources does HealixAI use?",
-      answer: "We access PubMed, clinical practice guidelines, medical textbooks, and other trusted medical databases to provide comprehensive, evidence-based information."
+      answer: "HealixAI is voice and text generative AI fine-tuned to access PubMed, clinical practice guidelines, medical textbooks, and other trusted medical databases to provide comprehensive, evidence-based information."
     },
     {
       question: "Is my data secure and private?",
@@ -18,7 +18,7 @@ export default function FAQ() {
     },
     {
       question: "How do credits work?",
-      answer: "Each query consumes one credit. More complex queries that require extensive research may use additional credits. You'll always be informed before additional credits are used."
+      answer: "Each query consumes partial credits or one credit based on complexity. More complex queries that require extensive research may use additional credits. You'll always be informed of the credits used."
     },
     {
       question: "Can I use HealixAI for patient care?",

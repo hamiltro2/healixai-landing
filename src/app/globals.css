@@ -316,7 +316,7 @@ html {
   }
   
   .glow-text-subtle {
-    text-shadow: 0 0 2px rgba(6, 182, 212, 0.6), 0 0 3px rgba(6, 182, 212, 0.3);
+    text-shadow: 0 0 3px rgba(6, 182, 212, 0.6), 0 0 5px rgba(6, 182, 212, 0.4);
   }
   
   .shadow-glow-cyan {

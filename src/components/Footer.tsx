@@ -2,8 +2,27 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const router = useRouter();
+  
+  const handleSectionNavigation = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    if (pathname === '/') {
+      // If we're already on the homepage, just scroll to the section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on another page, navigate to homepage with the section hash
+      router.push(`/#${sectionId}`);
+    }
+  };
+  
   return (
     <footer className="border-t border-gray-800 bg-gray-900">
       <div className="container px-4 md:px-6 py-8 md:py-10">
@@ -49,14 +68,22 @@ export default function Footer() {
             <h3 className="text-base font-medium text-white">Product</h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <Link href="#features" className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200">
+                <a 
+                  href="/#features" 
+                  className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200"
+                  onClick={(e) => handleSectionNavigation(e, 'features')}
+                >
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#use-cases" className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200">
+                <a 
+                  href="/#use-cases" 
+                  className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200"
+                  onClick={(e) => handleSectionNavigation(e, 'use-cases')}
+                >
                   Use Cases
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/pricing" className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200">
