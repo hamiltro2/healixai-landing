@@ -29,7 +29,7 @@ export default function Hero() {
           
           <div className="space-y-3">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              Transform <span className="text-cyan glow-cyan">Medical</span> Research with <span className="text-cyan glow-cyan">AI-Powered</span> <span className="text-cyan glow-cyan">Evidence-Based</span> <span className="text-cyan glow-cyan">Voice</span> Insights
+              <span className="glow-text-subtle">Transform</span> <span className="text-cyan glow-cyan">Healthcare</span> <span className="glow-text-subtle">Research</span> <span className="glow-text-subtle">with</span> <span className="text-cyan glow-cyan">AI-Powered</span> <span className="text-cyan glow-cyan">Evidence-Based</span> <span className="text-cyan glow-cyan">Voice</span> <span className="glow-text-subtle">Insights</span>
             </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
               HealixAI helps medical professionals and students access evidence-based insights and 
