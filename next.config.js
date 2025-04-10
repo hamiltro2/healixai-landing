@@ -5,6 +5,7 @@ const nextConfig = {
   },
   output: 'standalone',
   trailingSlash: false,
+  distDir: 'build',
 };
 
 module.exports = nextConfig;

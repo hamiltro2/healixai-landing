@@ -68,22 +68,22 @@ export default function Footer() {
             <h3 className="text-base font-medium text-white">Product</h3>
             <ul className="flex flex-col gap-2">
               <li>
-                <a 
+                <Link 
                   href="/#features" 
-                  className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200"
                   onClick={(e) => handleSectionNavigation(e, 'features')}
+                  className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200"
                 >
                   Features
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
+                <Link 
                   href="/#use-cases" 
-                  className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200"
                   onClick={(e) => handleSectionNavigation(e, 'use-cases')}
+                  className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200"
                 >
                   Use Cases
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/pricing" className="text-sm text-gray-300 hover:text-cyan-500 transition-colors duration-200">

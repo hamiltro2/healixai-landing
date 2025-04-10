@@ -58,20 +58,20 @@ export default function Header() {
           >
             Home
           </Link>
-          <a 
+          <Link 
             href="/#features" 
             className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
             onClick={(e) => handleSectionNavigation(e, 'features')}
           >
             Features
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/#use-cases" 
             className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
             onClick={(e) => handleSectionNavigation(e, 'use-cases')}
           >
             Use Cases
-          </a>
+          </Link>
           <Link 
             href="/about" 
             className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
@@ -125,7 +125,7 @@ export default function Header() {
             >
               Home
             </Link>
-            <a 
+            <Link 
               href="/#features" 
               className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
               onClick={(e) => {
@@ -134,8 +134,8 @@ export default function Header() {
               }}
             >
               Features
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/#use-cases" 
               className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
               onClick={(e) => {
@@ -144,7 +144,7 @@ export default function Header() {
               }}
             >
               Use Cases
-            </a>
+            </Link>
             <Link 
               href="/about" 
               className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
