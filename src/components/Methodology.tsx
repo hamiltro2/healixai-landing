@@ -1,16 +1,20 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Methodology() {
   return (
     <section id="methodology" className="pt-2 pb-8 md:pt-4 md:pb-12 bg-gray-950">
       <div className="container px-4 md:px-6">
         <div className="flex justify-center mb-8">
           <div className="relative flex justify-center w-full">
-            <img 
+            <Image 
               src="/images/healixai-physician.jpg" 
               alt="Physician using HealixAI" 
               className="rounded-2xl shadow-lg"
-              style={{ width: '60%', margin: '0 auto' }}
+              width={800}
+              height={500}
+              style={{ width: '60%', height: 'auto', margin: '0 auto' }}
             />
           </div>
         </div>

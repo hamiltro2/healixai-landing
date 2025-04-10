@@ -119,7 +119,7 @@ export default function Hero() {
                       <span className="text-blue-600 text-xs">You</span>
                     </div>
                     <div className="bg-blue-100 rounded-lg p-2 text-sm text-gray-800 max-w-[85%]">
-                      I've been feeling more tired lately. How can I naturally boost my energy, Healix?
+                      I&apos;ve been feeling more tired lately. How can I naturally boost my energy, Healix?
                     </div>
                   </div>
                   
