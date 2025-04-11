@@ -45,7 +45,9 @@ export default function ContactPage() {
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
+        const errorMessage = data.details || data.error || 'Failed to send message';
+        console.error('API error details:', data);
+        throw new Error(errorMessage);
       }
       
       // Email sent successfully to ricardohamiltonmd@healixai.com
@@ -59,7 +61,8 @@ export default function ContactPage() {
         message: ''
       });
     } catch (error) {
-      setSubmitError('There was an error submitting your message. Please try again.');
+      const errorMessage = error instanceof Error ? error.message : 'There was an error submitting your message. Please try again.';
+      setSubmitError(errorMessage);
       console.error('Form submission error:', error);
     } finally {
       setIsSubmitting(false);
@@ -218,7 +221,10 @@ export default function ContactPage() {
                         </div>
                         
                         {submitError && (
-                          <div className="text-red-500 text-sm">{submitError}</div>
+                          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 mb-4">
+                            <h4 className="text-red-400 font-medium mb-1">Error sending message:</h4>
+                            <p className="text-red-300 text-sm">{submitError}</p>
+                          </div>
                         )}
                         
                         <button

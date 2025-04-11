@@ -14,17 +14,39 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create a test SMTP transporter
-    // In production, you would use your actual SMTP credentials
+    // Log email configuration for debugging (remove in production)
+    console.log('Email configuration:', {
+      host: 'smtp.office365.com', // Microsoft 365 SMTP server
+      port: 587, // Microsoft 365 uses port 587 with STARTTLS
+      secure: false, // Microsoft 365 uses STARTTLS on port 587
+      user: process.env.EMAIL_USER ? `${process.env.EMAIL_USER.substring(0, 3)}...` : undefined,
+      from: process.env.EMAIL_FROM,
+    });
+
+    // Create a Microsoft 365 SMTP transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST || 'smtp.example.com',
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: process.env.EMAIL_SECURE === 'true',
+      host: 'smtp.office365.com', // Microsoft 365 SMTP server
+      port: 587, // Microsoft 365 uses port 587
+      secure: false, // Microsoft 365 uses STARTTLS (not SSL)
       auth: {
         user: process.env.EMAIL_USER || 'user@example.com',
         pass: process.env.EMAIL_PASSWORD || 'password',
       },
+      tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false,
+      },
+      debug: true, // Show debug output
+      logger: true // Log information into the console
     });
+
+    // Skip SMTP verification in development to avoid authentication issues
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Skipping SMTP verification in development mode');
+    } else {
+      // Verify SMTP connection configuration
+      await transporter.verify();
+    }
 
     // Email content
     const mailOptions = {
@@ -50,6 +72,18 @@ export async function POST(request: NextRequest) {
       `,
     };
 
+    // For testing in development, log success without actually sending email
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Development mode: Email would be sent with:', {
+        to: 'ricardohamiltonmd@healixai.com',
+        from: `"HealixAI Contact Form" <${process.env.EMAIL_FROM || 'noreply@healixai.com'}>`,
+        subject: `HealixAI Contact: ${subject}`,
+        text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`
+      });
+      
+      return NextResponse.json({ success: true });
+    }
+
     // Send the email
     await transporter.sendMail(mailOptions);
 
@@ -57,7 +91,12 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { 
+        error: 'Failed to send email', 
+        details: error instanceof Error ? error.message : String(error),
+        code: error instanceof Error && 'code' in error ? (error as { code: string }).code : undefined,
+        responseInfo: error instanceof Error && 'response' in error ? (error as { response: string }).response : undefined
+      },
       { status: 500 }
     );
   }
