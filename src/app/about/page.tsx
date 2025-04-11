@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Footer from '@/components/Footer';
 import AboutHeader from './AboutHeader';
 
@@ -146,12 +145,6 @@ export default function AboutPage() {
               <p className="text-gray-300 mb-8">
                 Experience how HealixAI is transforming access to evidence-based medical information and enhancing healthcare for all.
               </p>
-              <Link 
-                href="/"
-                className="inline-flex items-center justify-center rounded-md bg-cyan-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 transition-colors duration-200"
-              >
-                Explore HealixAI
-              </Link>
             </div>
           </div>
         </section>

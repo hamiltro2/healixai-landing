@@ -5,30 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 import { Menu, X } from 'lucide-react';
-import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
   
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-  
-  const handleSectionNavigation = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault();
-    
-    if (pathname === '/') {
-      // If we're already on the homepage, just scroll to the section
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // If we're on another page, navigate to homepage with the section hash
-      router.push(`/#${sectionId}`);
-    }
   };
 
   return (
@@ -52,26 +34,6 @@ export default function Header() {
         </div>
 
         <nav className="hidden md:flex items-center gap-6">
-          <Link 
-            href="/" 
-            className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
-          >
-            Home
-          </Link>
-          <Link 
-            href="/#features" 
-            className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
-            onClick={(e) => handleSectionNavigation(e, 'features')}
-          >
-            Features
-          </Link>
-          <Link 
-            href="/#use-cases" 
-            className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
-            onClick={(e) => handleSectionNavigation(e, 'use-cases')}
-          >
-            Use Cases
-          </Link>
           <Link 
             href="/about" 
             className="text-sm font-medium text-gray-200 transition-colors hover:text-cyan-500"
@@ -118,33 +80,6 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-800 bg-[#030712]">
           <div className="container px-4 py-4 flex flex-col space-y-4">
-            <Link 
-              href="/" 
-              className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
-              onClick={toggleMobileMenu}
-            >
-              Home
-            </Link>
-            <Link 
-              href="/#features" 
-              className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
-              onClick={(e) => {
-                toggleMobileMenu();
-                handleSectionNavigation(e, 'features');
-              }}
-            >
-              Features
-            </Link>
-            <Link 
-              href="/#use-cases" 
-              className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
-              onClick={(e) => {
-                toggleMobileMenu();
-                handleSectionNavigation(e, 'use-cases');
-              }}
-            >
-              Use Cases
-            </Link>
             <Link 
               href="/about" 
               className="text-sm font-medium py-2 text-gray-200 hover:text-cyan-500"
