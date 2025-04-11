@@ -96,7 +96,7 @@ export default function CookiesPage() {
                   
                   <h2 className="text-xl font-semibold text-white mt-8 mb-4">7. Contact Us</h2>
                   <p>
-                    If you have any questions about our use of cookies or other technologies, please contact us at <a href="mailto:privacy@healixai.com" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">privacy@healixai.com</a>.
+                    If you have any questions about our use of cookies or other technologies, please contact us at <a href="mailto:info@healixai.com" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">info@healixai.com</a>.
                   </p>
                   
                   <p className="mt-8 text-sm text-gray-400">
