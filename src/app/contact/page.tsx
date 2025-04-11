@@ -33,12 +33,23 @@ export default function ContactPage() {
     setSubmitError('');
     
     try {
-      // In a real implementation, you would send this data to your server
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send form data to our API endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
       
-      // Simulate sending to ricardohamiltonmd@healixai.com
-      console.log('Form submitted:', formData);
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+      
+      // Email sent successfully to ricardohamiltonmd@healixai.com
+      console.log('Form submitted successfully');
       
       setSubmitSuccess(true);
       setFormData({
