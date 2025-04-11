@@ -41,12 +41,12 @@ export default function CookiesPage() {
                     Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners to make their websites work efficiently and provide reporting information.
                   </p>
                   <p className="mt-2">
-                    Cookies set by the website owner (in this case, HealixAI) are called "first-party cookies." Cookies set by parties other than the website owner are called "third-party cookies." Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics).
+                    Cookies set by the website owner (in this case, HealixAI) are called &quot;first-party cookies.&quot; Cookies set by parties other than the website owner are called &quot;third-party cookies.&quot; Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics).
                   </p>
                   
                   <h2 className="text-xl font-semibold text-white mt-8 mb-4">2. Why We Use Cookies</h2>
                   <p>
-                    We use cookies for several reasons. Some cookies are required for technical reasons for our website and services to operate, and we refer to these as "essential" or "strictly necessary" cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our website. Third parties may also serve cookies through our website for advertising, analytics, and other purposes.
+                    We use cookies for several reasons. Some cookies are required for technical reasons for our website and services to operate, and we refer to these as &quot;essential&quot; or &quot;strictly necessary&quot; cookies. Other cookies enable us to track and target the interests of our users to enhance the experience on our website. Third parties may also serve cookies through our website for advertising, analytics, and other purposes.
                   </p>
                   <p className="mt-2">
                     Specifically, we use cookies for the following purposes:
@@ -78,7 +78,7 @@ export default function CookiesPage() {
                   
                   <h2 className="text-xl font-semibold text-white mt-8 mb-4">4. How to Control Cookies</h2>
                   <p>
-                    You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted. As the means by which you can refuse cookies through your web browser controls vary from browser to browser, you should visit your browser's help menu for more information.
+                    You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted. As the means by which you can refuse cookies through your web browser controls vary from browser to browser, you should visit your browser&apos;s help menu for more information.
                   </p>
                   <p className="mt-2">
                     In addition, most advertising networks offer you a way to opt out of targeted advertising. If you would like to find out more information, please visit <a href="http://www.aboutads.info/choices/" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">http://www.aboutads.info/choices/</a> or <a href="http://www.youronlinechoices.com" className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200">http://www.youronlinechoices.com</a>.
@@ -86,7 +86,7 @@ export default function CookiesPage() {
                   
                   <h2 className="text-xl font-semibold text-white mt-8 mb-4">5. Cookie Preferences</h2>
                   <p>
-                    When you first visit our website, you will be presented with a cookie banner that allows you to accept or decline non-essential cookies. You can change your cookie preferences at any time by clicking on the "Cookie Preferences" link in the footer of our website.
+                    When you first visit our website, you will be presented with a cookie banner that allows you to accept or decline non-essential cookies. You can change your cookie preferences at any time by clicking on the &quot;Cookie Preferences&quot; link in the footer of our website.
                   </p>
                   
                   <h2 className="text-xl font-semibold text-white mt-8 mb-4">6. Updates to This Cookie Policy</h2>
