@@ -16,7 +16,7 @@ export default function CTA() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 <span className="text-white text-stroke-cyan">Transform Your Medical Practice with</span> <span className="text-cyan-500">HealixAI</span>
               </h2>
-              <h3 className="text-xl font-semibold mt-6 text-cyan-600">Fellow Physicians, Let&#39;s Connect</h3>
+              <h3 className="text-xl font-semibold mt-6 text-cyan-600">Fellow Healthcare professionals, Let&#39;s Connect</h3>
             </div>
             
             <div className="mx-auto max-w-[700px] text-left">
@@ -43,10 +43,11 @@ export default function CTA() {
               <Button 
                 variant="primary"
                 size="large" 
-                className="px-8 py-3 text-base"
+                className="px-4 sm:px-8 py-3 text-sm sm:text-base text-center"
                 href="/contact"
               >
-                Contact us to learn more and start the conversation
+                <span className="block sm:hidden">Contact us</span>
+                <span className="hidden sm:block">Contact us to learn more and start the conversation</span>
               </Button>
             </div>
             <div className="text-sm text-muted-foreground">
